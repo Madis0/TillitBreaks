@@ -23,7 +23,7 @@ import java.util.Map;
 @Mixin(ItemRenderer.class)
 public abstract class ItemRendererMixin {
 
-    private final float scale = 0.5F;
+    private final float scale = 0.8F;
 
     @Shadow
     public float zOffset;
@@ -41,15 +41,10 @@ public abstract class ItemRendererMixin {
             MatrixStack matrixTextInfo = new MatrixStack();
             matrixTextInfo.push();
             matrixTextInfo.translate(x, y, (double)(this.zOffset + 200.0F));
-            matrixTextInfo.scale(0.5F, 0.5F, 0F);
+            matrixTextInfo.scale(scale, scale, 0F);
             float scaleOffset = 1F / scale;
-            int fontHeight = renderer.fontHeight;
 
-            String curDur = String.valueOf(stack.getMaxDamage() - stack.getDamage());
-            int textWidth = renderer.getWidth(curDur);
-
-            renderer.draw(matrixTextInfo, curDur, 16*scaleOffset-textWidth-1, 16*scaleOffset-fontHeight-5, -1);
-
+            int textWidth;
 
             if (stack.getItem() == Items.BOW || stack.getItem() == Items.CROSSBOW){
 

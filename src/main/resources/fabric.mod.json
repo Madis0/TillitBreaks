@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "tillitbreaks",
+  "id": "tillitbreaks-arrows",
   "version": "${version}",
   "name": "Till it Breaks",
-  "description": "Displays the durability of all items with a durability using text on the item",
+  "description": "Arrows-only fork",
   "authors": [
     "Schauweg"
   ],
